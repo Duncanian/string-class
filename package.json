@@ -1,0 +1,24 @@
+{
+  "name": "string-class",
+  "version": "1.0.0",
+  "description": "Extending string class",
+  "main": "index.js",
+  "devDependencies": {
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.4",
+    "jasmine": "^2.4.1"
+  },
+  "scripts": {
+    "test": "istanbul cover jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-skieha/string-class.git"
+  },
+  "author": "Njeri Kieha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andela-skieha/string-class/issues"
+  },
+  "homepage": "https://github.com/andela-skieha/string-class#readme"
+}
