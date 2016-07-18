@@ -12,3 +12,7 @@ String.prototype.words = function words () {
   var placeToSplit = new RegExp(/\W+/);
   return this.split(placeToSplit);
 };
+
+String.prototype.wordCount = function wordCount () {
+  return this.words().length;
+};

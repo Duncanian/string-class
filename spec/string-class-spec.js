@@ -43,7 +43,7 @@ describe('String Class Extension Tests', function () {
 
   // words() tests
   describe('words() Tests', function () {
-    var string = 'array of words'
+    var string = 'array of words';
 
     it('returns an array', function () {
       expect(typeof string.words()).toBe('object');
@@ -56,6 +56,20 @@ describe('String Class Extension Tests', function () {
       expect('array:of!words?is,here'.words()).toEqual(['array', 'of', 'words', 'is', 'here']);
       expect('array::,*of!,.%^words'.words()).toEqual(['array', 'of', 'words']);
 
+    });
+  });
+
+  // wordCount() tests
+  describe('wordCount() Tests', function () {
+    var string = 'array of words';
+
+    it('returns a number', function () {
+      expect(typeof string.wordCount()).toBe('number');
+    });
+
+    it('returns an accurate number of words in the string', function () {
+      expect(string.wordCount()).toEqual(3);
+      expect(string.wordCount()).not.toEqual(4);
     });
   });
 });
