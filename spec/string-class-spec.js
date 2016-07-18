@@ -72,4 +72,19 @@ describe('String Class Extension Tests', function () {
       expect(string.wordCount()).not.toEqual(4);
     });
   });
+
+  // fromCurrency() tests
+  describe('fromCurrency() Tests', function () {
+    string = '11,111.11';
+
+    it('returns a number', function () {
+      expect(typeof string.fromCurrency()).toBe('number');
+    });
+
+    it('returns an accurate number representation of the Currency String', function () {
+      expect(string.fromCurrency()).toEqual(11111.11);
+      expect('123,456.00'.fromCurrency()).toEqual(123456);
+      expect('123,456,789.00'.fromCurrency()).toEqual(NaN);
+    });
+  });
 });

@@ -16,3 +16,7 @@ String.prototype.words = function words () {
 String.prototype.wordCount = function wordCount () {
   return this.words().length;
 };
+
+String.prototype.fromCurrency = function fromCurrency () {
+  return Number(this.replace(/,/, ''));
+};
