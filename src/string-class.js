@@ -3,6 +3,14 @@ String.prototype.hasVowels = function hasVowels () {
   return vowels.test(this);
 };
 
+String.prototype.toUpper = function toUpper () {
+  var upperCase = new RegExp('[a-z]', 'g');
+  var converter = function converter (letter) {
+    return String.fromCharCode(letter.charCodeAt(0) - 32);
+  }
+  return this.replace(upperCase, converter);
+};
+
 String.prototype.isQuestion = function isQuestion () {
   var questionMark = new RegExp(/\?$/);
   return questionMark.test(this);

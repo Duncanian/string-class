@@ -22,6 +22,21 @@ describe('String Class Extension Tests', function () {
     });
   });
 
+  // toUpper() tests
+  describe('toUpper() Tests', function () {
+    var string = 'njerrywerry';
+
+    it('returns a string', function () {
+      expect(typeof string.toUpper()).toBe('string');
+    });
+
+    it('returns the string with all characters in upper case', function () {
+      expect(string.toUpper()).toEqual('NJERRYWERRY');
+      expect('NjerryWerry'.toUpper()).toEqual('NJERRYWERRY');
+      expect('Njerry Is Uppercase Now'.toUpper()).toEqual('NJERRY IS UPPERCASE NOW');
+    });
+  });
+
   // isQuestion() tests
   describe('isQuestion() Tests', function () {
     it('returns a boolean value', function () {
