@@ -37,6 +37,21 @@ describe('String Class Extension Tests', function () {
     });
   });
 
+  // toLower() tests
+  describe('toLower() Tests', function () {
+    var string = 'NJERRYWERRY';
+
+    it('returns a string', function () {
+      expect(typeof string.toLower()).toBe('string');
+    });
+
+    it('returns the string with all characters in lower case', function () {
+      expect(string.toLower()).toEqual('njerrywerry');
+      expect('NjerryWerry'.toLower()).toEqual('njerrywerry');
+      expect('Njerry Is LowerCase Now'.toLower()).toEqual('njerry is lowercase now');
+    });
+  });
+
   // isQuestion() tests
   describe('isQuestion() Tests', function () {
     it('returns a boolean value', function () {

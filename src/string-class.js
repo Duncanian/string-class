@@ -5,10 +5,18 @@ String.prototype.hasVowels = function hasVowels () {
 
 String.prototype.toUpper = function toUpper () {
   var upperCase = new RegExp('[a-z]', 'g');
-  var converter = function converter (letter) {
+  var upperConverter = function upperConverter (letter) {
     return String.fromCharCode(letter.charCodeAt(0) - 32);
   }
-  return this.replace(upperCase, converter);
+  return this.replace(upperCase, upperConverter);
+};
+
+String.prototype.toLower = function toLower () {
+  var lowerCase = new RegExp('[A-Z]', 'g');
+  var lowerConverter = function lowerConverter (letter) {
+    return String.fromCharCode(letter.charCodeAt(0) + 32);
+  }
+  return this.replace(lowerCase, lowerConverter);
 };
 
 String.prototype.isQuestion = function isQuestion () {
