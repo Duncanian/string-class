@@ -7,3 +7,8 @@ String.prototype.isQuestion = function isQuestion () {
   var questionMark = new RegExp(/\?$/);
   return questionMark.test(this);
 };
+
+String.prototype.words = function words () {
+  var placeToSplit = new RegExp(/\W+/);
+  return this.split(placeToSplit);
+};

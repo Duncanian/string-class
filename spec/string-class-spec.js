@@ -40,4 +40,22 @@ describe('String Class Extension Tests', function () {
       expect('Invalid? Question'.isQuestion()).toBeFalsy();
     });
   });
+
+  // words() tests
+  describe('words() Tests', function () {
+    var string = 'array of words'
+
+    it('returns an array', function () {
+      expect(typeof string.words()).toBe('object');
+      expect(string.words() instanceof Array).toBeTruthy();
+      expect(Array.isArray(string.words())).toBeTruthy();
+    });
+
+    it('returns a list of words in the string as an Array', function () {
+      expect(string.words()).toEqual(['array', 'of', 'words']);
+      expect('array:of!words?is,here'.words()).toEqual(['array', 'of', 'words', 'is', 'here']);
+      expect('array::,*of!,.%^words'.words()).toEqual(['array', 'of', 'words']);
+
+    });
+  });
 });
