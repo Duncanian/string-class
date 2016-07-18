@@ -16,4 +16,19 @@ describe('String Class Extension Tests', function () {
       expect(' '.hasVowels()).toBeFalsy();
     });
   });
+
+  // isQuestion() tests
+  describe('isQuestion() Tests', function () {
+    it('returns true if string is a question', function () {
+      expect('Question?'.isQuestion()).toBeTruthy();
+    });
+
+    it('returns false if string is not a question', function () {
+      expect('Not a question'.isQuestion()).toBeFalsy();
+    });
+
+    it('returns false if question mark is not at the end of the string', function () {
+      expect('Invalid? Question'.isQuestion()).toBeFalsy();
+    });
+  });
 });
