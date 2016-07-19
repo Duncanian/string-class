@@ -19,6 +19,10 @@ String.prototype.toLower = function toLower () {
   return this.replace(lowerCase, lowerConverter);
 };
 
+String.prototype.ucFirst = function ucFirst () {
+  return this[0].toUpper() + this.slice(1);
+};
+
 String.prototype.isQuestion = function isQuestion () {
   var questionMark = new RegExp(/\?$/);
   return questionMark.test(this);

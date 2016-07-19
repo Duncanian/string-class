@@ -52,6 +52,21 @@ describe('String Class Extension Tests', function () {
     });
   });
 
+  // ucFirst() tests
+  describe('ucFirst() Tests', function () {
+    var string = 'njerry';
+
+    it('returns a string', function () {
+      expect(typeof string.ucFirst()).toBe('string');
+    });
+
+    it('returns the string with the first character to upper case', function () {
+      expect(string.ucFirst()).toEqual('Njerry');
+      expect('njeRI'.ucFirst()).toEqual('NjeRI');
+      expect('njerry werry'.ucFirst()).toEqual('Njerry werry');
+    });
+  });
+
   // isQuestion() tests
   describe('isQuestion() Tests', function () {
     it('returns a boolean value', function () {
@@ -105,7 +120,7 @@ describe('String Class Extension Tests', function () {
 
   // fromCurrency() tests
   describe('fromCurrency() Tests', function () {
-    string = '11,111.11';
+    var string = '11,111.11';
 
     it('returns a number', function () {
       expect(typeof string.fromCurrency()).toBe('number');
