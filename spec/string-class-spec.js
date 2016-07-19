@@ -144,7 +144,7 @@ describe('String Class Extension Tests', function () {
     it('returns an accurate number representation of the Currency String', function () {
       expect(string.fromCurrency()).toEqual(11111.11);
       expect('123,456.00'.fromCurrency()).toEqual(123456);
-      expect('123,456,789.00'.fromCurrency()).toEqual(NaN);
+      expect('123,456,789.00'.fromCurrency()).toEqual(123456789);
     });
   });
 });

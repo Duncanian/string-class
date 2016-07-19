@@ -24,12 +24,12 @@ String.prototype.ucFirst = function ucFirst () {
 };
 
 String.prototype.isQuestion = function isQuestion () {
-  var questionMark = new RegExp(/\?$/);
+  var questionMark = new RegExp(/\?$/, 'g');
   return questionMark.test(this);
 };
 
 String.prototype.words = function words () {
-  var placeToSplit = new RegExp(/\W+/);
+  var placeToSplit = new RegExp(/\W+/, 'g');
   return this.split(placeToSplit);
 };
 
@@ -48,5 +48,6 @@ String.prototype.toCurrency = function toCurrency () {
 };
 
 String.prototype.fromCurrency = function fromCurrency () {
-  return Number(this.replace(/,/, ''));
+  var comma = new RegExp(/,/, 'g');
+  return Number(this.replace(comma, ''));
 };
