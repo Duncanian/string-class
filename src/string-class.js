@@ -37,6 +37,16 @@ String.prototype.wordCount = function wordCount () {
   return this.words().length;
 };
 
+String.prototype.toCurrency = function toCurrency () {
+  /*
+    The regular expression matcher matches a digit only if it is followed
+    by three other digits and a period (.).
+  */
+
+  var matcher = new RegExp(/(\d)(?=(\d{3})+\.)/, 'g');
+  return parseFloat(this).toFixed(2).replace(matcher, '$1,');
+};
+
 String.prototype.fromCurrency = function fromCurrency () {
   return Number(this.replace(/,/, ''));
 };

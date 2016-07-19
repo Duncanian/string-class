@@ -118,6 +118,21 @@ describe('String Class Extension Tests', function () {
     });
   });
 
+  // toCurrency() tests
+  describe('toCurrency() Tests', function () {
+    var string = '11111.11';
+
+    it('returns a string', function () {
+      expect(typeof string.toCurrency()).toBe('string');
+    });
+
+    it('returns an accurate currency representation of the string', function () {
+      expect(string.toCurrency()).toEqual('11,111.11');
+      expect('10000'.toCurrency()).toEqual('10,000.00');
+      expect('1234567.12'.toCurrency()).toEqual('1,234,567.12');
+    });
+  });
+
   // fromCurrency() tests
   describe('fromCurrency() Tests', function () {
     var string = '11,111.11';
