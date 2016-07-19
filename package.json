@@ -5,6 +5,11 @@
   "main": "index.js",
   "devDependencies": {
     "coveralls": "^2.11.9",
+    "eslint": "^3.1.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.11.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
     "istanbul": "^0.4.4",
     "jasmine": "^2.4.1"
   },

@@ -1,20 +1,19 @@
 require('../src/string-class.js');
 
-describe('String Class Extension Tests', function () {
-
+describe('String Class Extension Tests', () => {
   // hasVowels() tests
-  describe('hasVowels() Tests', function () {
-    it('returns a boolean value', function () {
+  describe('hasVowels() Tests', () => {
+    it('returns a boolean value', () => {
       expect(typeof ' '.hasVowels()).toBe('boolean');
     });
 
-    it('returns true if string contains vowels', function () {
+    it('returns true if string contains vowels', () => {
       expect('has vowels'.hasVowels()).toBeTruthy();
       expect('HAS VOWELS'.hasVowels()).toBeTruthy();
       expect('ewiuh 546543857 #^$%5 sguhfer'.hasVowels()).toBeTruthy();
     });
 
-    it('returns false if string has no vowels', function () {
+    it('returns false if string has no vowels', () => {
       expect('n0 vwls'.hasVowels()).toBeFalsy();
       expect('N0 VWLS'.hasVowels()).toBeFalsy();
       expect(' '.hasVowels()).toBeFalsy();
@@ -23,14 +22,14 @@ describe('String Class Extension Tests', function () {
   });
 
   // toUpper() tests
-  describe('toUpper() Tests', function () {
-    var string = 'njerrywerry';
+  describe('toUpper() Tests', () => {
+    const string = 'njerrywerry';
 
-    it('returns a string', function () {
+    it('returns a string', () => {
       expect(typeof string.toUpper()).toBe('string');
     });
 
-    it('returns the string with all characters in upper case', function () {
+    it('returns the string with all characters in upper case', () => {
       expect(string.toUpper()).toEqual('NJERRYWERRY');
       expect('NjerryWerry'.toUpper()).toEqual('NJERRYWERRY');
       expect('Njerry Is Uppercase Now'.toUpper()).toEqual('NJERRY IS UPPERCASE NOW');
@@ -38,14 +37,14 @@ describe('String Class Extension Tests', function () {
   });
 
   // toLower() tests
-  describe('toLower() Tests', function () {
-    var string = 'NJERRYWERRY';
+  describe('toLower() Tests', () => {
+    const string = 'NJERRYWERRY';
 
-    it('returns a string', function () {
+    it('returns a string', () => {
       expect(typeof string.toLower()).toBe('string');
     });
 
-    it('returns the string with all characters in lower case', function () {
+    it('returns the string with all characters in lower case', () => {
       expect(string.toLower()).toEqual('njerrywerry');
       expect('NjerryWerry'.toLower()).toEqual('njerrywerry');
       expect('Njerry Is LowerCase Now'.toLower()).toEqual('njerry is lowercase now');
@@ -53,14 +52,14 @@ describe('String Class Extension Tests', function () {
   });
 
   // ucFirst() tests
-  describe('ucFirst() Tests', function () {
-    var string = 'njerry';
+  describe('ucFirst() Tests', () => {
+    const string = 'njerry';
 
-    it('returns a string', function () {
+    it('returns a string', () => {
       expect(typeof string.ucFirst()).toBe('string');
     });
 
-    it('returns the string with the first character to upper case', function () {
+    it('returns the string with the first character to upper case', () => {
       expect(string.ucFirst()).toEqual('Njerry');
       expect('njeRI'.ucFirst()).toEqual('NjeRI');
       expect('njerry werry'.ucFirst()).toEqual('Njerry werry');
@@ -68,65 +67,64 @@ describe('String Class Extension Tests', function () {
   });
 
   // isQuestion() tests
-  describe('isQuestion() Tests', function () {
-    it('returns a boolean value', function () {
+  describe('isQuestion() Tests', () => {
+    it('returns a boolean value', () => {
       expect(typeof ' '.isQuestion()).toBe('boolean');
     });
 
-    it('returns true if string is a question', function () {
+    it('returns true if string is a question', () => {
       expect('Question?'.isQuestion()).toBeTruthy();
     });
 
-    it('returns false if string is not a question', function () {
+    it('returns false if string is not a question', () => {
       expect('Not a question'.isQuestion()).toBeFalsy();
     });
 
-    it('returns false if question mark is not at the end of the string', function () {
+    it('returns false if question mark is not at the end of the string', () => {
       expect('Invalid? Question'.isQuestion()).toBeFalsy();
     });
   });
 
   // words() tests
-  describe('words() Tests', function () {
-    var string = 'array of words';
+  describe('words() Tests', () => {
+    const string = 'array of words';
 
-    it('returns an array', function () {
+    it('returns an array', () => {
       expect(typeof string.words()).toBe('object');
       expect(string.words() instanceof Array).toBeTruthy();
       expect(Array.isArray(string.words())).toBeTruthy();
     });
 
-    it('returns a list of words in the string as an Array', function () {
+    it('returns a list of words in the string as an Array', () => {
       expect(string.words()).toEqual(['array', 'of', 'words']);
       expect('array:of!words?is,here'.words()).toEqual(['array', 'of', 'words', 'is', 'here']);
       expect('array::,*of!,.%^words'.words()).toEqual(['array', 'of', 'words']);
-
     });
   });
 
   // wordCount() tests
-  describe('wordCount() Tests', function () {
-    var string = 'array of words';
+  describe('wordCount() Tests', () => {
+    const string = 'array of words';
 
-    it('returns a number', function () {
+    it('returns a number', () => {
       expect(typeof string.wordCount()).toBe('number');
     });
 
-    it('returns an accurate number of words in the string', function () {
+    it('returns an accurate number of words in the string', () => {
       expect(string.wordCount()).toEqual(3);
       expect(string.wordCount()).not.toEqual(4);
     });
   });
 
   // toCurrency() tests
-  describe('toCurrency() Tests', function () {
-    var string = '11111.11';
+  describe('toCurrency() Tests', () => {
+    const string = '11111.11';
 
-    it('returns a string', function () {
+    it('returns a string', () => {
       expect(typeof string.toCurrency()).toBe('string');
     });
 
-    it('returns an accurate currency representation of the string', function () {
+    it('returns an accurate currency representation of the string', () => {
       expect(string.toCurrency()).toEqual('11,111.11');
       expect('10000'.toCurrency()).toEqual('10,000.00');
       expect('1234567.12'.toCurrency()).toEqual('1,234,567.12');
@@ -134,14 +132,14 @@ describe('String Class Extension Tests', function () {
   });
 
   // fromCurrency() tests
-  describe('fromCurrency() Tests', function () {
-    var string = '11,111.11';
+  describe('fromCurrency() Tests', () => {
+    const string = '11,111.11';
 
-    it('returns a number', function () {
+    it('returns a number', () => {
       expect(typeof string.fromCurrency()).toBe('number');
     });
 
-    it('returns an accurate number representation of the Currency String', function () {
+    it('returns an accurate number representation of the Currency String', () => {
       expect(string.fromCurrency()).toEqual(11111.11);
       expect('123,456.00'.fromCurrency()).toEqual(123456);
       expect('123,456,789.00'.fromCurrency()).toEqual(123456789);
