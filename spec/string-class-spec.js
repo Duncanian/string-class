@@ -99,8 +99,9 @@ describe('String Class Extension Tests', () => {
 
     it('returns a list of words in the string as an Array', () => {
       expect(string.words()).toEqual(['array', 'of', 'words']);
-      expect('array:of!words?is,here'.words()).toEqual(['array', 'of', 'words', 'is', 'here']);
-      expect('array::,*of!,.%^words'.words()).toEqual(['array', 'of', 'words']);
+      expect('array:of!words?is,here?'.words()).toEqual(['array', 'of', 'words', 'is', 'here']);
+      expect('?array::,*of!,.%^words'.words()).toEqual(['array', 'of', 'words']);
+      expect('don\'t go there!'.words()).toEqual(['don\'t', 'go', 'there']);
     });
   });
 

@@ -32,7 +32,11 @@ String.prototype.isQuestion = function isQuestion() {
 };
 
 String.prototype.words = function words() {
-  return this.split(new RegExp(/\W+/, 'g'));
+  // replace any non-word character at the beginning/end of the string
+  const newString = this.trim().replace((new RegExp(/^\W|\W$/)), '');
+
+  // split the new string at any non-word character excluding the apostrophe
+  return newString.split(new RegExp(/[^A-Za-z0-9_']+/, 'g'));
 };
 
 String.prototype.wordCount = function wordCount() {
