@@ -8,16 +8,16 @@ describe('String Class Extension Tests', () => {
     });
 
     it('returns true if string contains vowels', () => {
-      expect('has vowels'.hasVowels()).toBeTruthy();
-      expect('HAS VOWELS'.hasVowels()).toBeTruthy();
-      expect('ewiuh 546543857 #^$%5 sguhfer'.hasVowels()).toBeTruthy();
+      expect('has vowels'.hasVowels()).toBe(true);
+      expect('HAS VOWELS'.hasVowels()).toBe(true);
+      expect('ewiuh 546543857 #^$%5 sguhfer'.hasVowels()).toBe(true);
     });
 
     it('returns false if string has no vowels', () => {
-      expect('n0 vwls'.hasVowels()).toBeFalsy();
-      expect('N0 VWLS'.hasVowels()).toBeFalsy();
-      expect(' '.hasVowels()).toBeFalsy();
-      expect('1234'.hasVowels()).toBeFalsy();
+      expect('n0 vwls'.hasVowels()).toBe(false);
+      expect('N0 VWLS'.hasVowels()).toBe(false);
+      expect(' '.hasVowels()).toBe(false);
+      expect('1234'.hasVowels()).toBe(false);
     });
   });
 
@@ -73,15 +73,15 @@ describe('String Class Extension Tests', () => {
     });
 
     it('returns true if string is a question', () => {
-      expect('Question?'.isQuestion()).toBeTruthy();
+      expect('Question?'.isQuestion()).toBe(true);
     });
 
     it('returns false if string is not a question', () => {
-      expect('Not a question'.isQuestion()).toBeFalsy();
+      expect('Not a question'.isQuestion()).toBe(false);
     });
 
     it('returns false if question mark is not at the end of the string', () => {
-      expect('Invalid? Question'.isQuestion()).toBeFalsy();
+      expect('Invalid? Question'.isQuestion()).toBe(false);
     });
   });
 
@@ -91,8 +91,8 @@ describe('String Class Extension Tests', () => {
 
     it('returns an array', () => {
       expect(typeof string.words()).toBe('object');
-      expect(string.words() instanceof Array).toBeTruthy();
-      expect(Array.isArray(string.words())).toBeTruthy();
+      expect(string.words() instanceof Array).toBe(true);
+      expect(Array.isArray(string.words())).toBe(true);
     });
 
     it('returns a list of words in the string as an Array', () => {
