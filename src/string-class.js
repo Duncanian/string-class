@@ -7,19 +7,19 @@ String.prototype.hasVowels = function hasVowels() {
 };
 
 String.prototype.toUpper = function toUpper() {
-  const upperCase = new RegExp('[a-z]', 'g');
+  const lowerCase = new RegExp('[a-z]', 'g');
   const upperConverter = function upperConverter(letter) {
-    return String.fromCharCode(letter.charCodeAt(0) - 32);
+    return String.fromCharCode(letter.charCodeAt() - 32);
   };
-  return this.replace(upperCase, upperConverter);
+  return this.replace(lowerCase, upperConverter);
 };
 
 String.prototype.toLower = function toLower() {
-  const lowerCase = new RegExp('[A-Z]', 'g');
+  const upperCase = new RegExp('[A-Z]', 'g');
   const lowerConverter = function lowerConverter(letter) {
-    return String.fromCharCode(letter.charCodeAt(0) + 32);
+    return String.fromCharCode(letter.charCodeAt() + 32);
   };
-  return this.replace(lowerCase, lowerConverter);
+  return this.replace(upperCase, lowerConverter);
 };
 
 String.prototype.ucFirst = function ucFirst() {
@@ -32,8 +32,7 @@ String.prototype.isQuestion = function isQuestion() {
 };
 
 String.prototype.words = function words() {
-  const placeToSplit = new RegExp(/\W+/, 'g');
-  return this.split(placeToSplit);
+  return this.split(new RegExp(/\W+/, 'g'));
 };
 
 String.prototype.wordCount = function wordCount() {

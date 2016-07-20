@@ -33,6 +33,7 @@ describe('String Class Extension Tests', () => {
       expect(string.toUpper()).toEqual('NJERRYWERRY');
       expect('NjerryWerry'.toUpper()).toEqual('NJERRYWERRY');
       expect('Njerry Is Uppercase Now'.toUpper()).toEqual('NJERRY IS UPPERCASE NOW');
+      expect('njerry 123'.toUpper()).toEqual('NJERRY 123');
     });
   });
 
@@ -48,6 +49,7 @@ describe('String Class Extension Tests', () => {
       expect(string.toLower()).toEqual('njerrywerry');
       expect('NjerryWerry'.toLower()).toEqual('njerrywerry');
       expect('Njerry Is LowerCase Now'.toLower()).toEqual('njerry is lowercase now');
+      expect('NJERRy 123'.toLower()).toEqual('njerry 123');
     });
   });
 
@@ -128,6 +130,7 @@ describe('String Class Extension Tests', () => {
       expect(string.toCurrency()).toEqual('11,111.11');
       expect('10000'.toCurrency()).toEqual('10,000.00');
       expect('1234567.12'.toCurrency()).toEqual('1,234,567.12');
+      expect('12'.toCurrency()).toEqual('12.00');
     });
   });
 
