@@ -54,6 +54,5 @@ String.prototype.toCurrency = function toCurrency() {
 };
 
 String.prototype.fromCurrency = function fromCurrency() {
-  const comma = new RegExp(/,/, 'g');
-  return Number(this.replace(comma, ''));
+  return Number(this.replace(new RegExp(/,/, 'g'), ''));
 };
